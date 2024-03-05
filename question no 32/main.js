@@ -1,3 +1,4 @@
+"use strict";
 /*Checking Usernames: Do the following to create a program that simulates how websites ensure that everyone has a unique username.
 • Make a list of five or more usernames called current_users.
 
@@ -7,17 +8,18 @@
 
 • Make sure your comparison is case insensitive. If 'John' has been used, 'JOHN' should not be accepted.*/
 // Step no 1
-var current_users = ["Saher", "Saad", "Maaz", "Ayesha", "Saleem"];
-var new_users = ["Anus", "SaHer", "Momina", "OMAR"];
-for (var _i = 0, new_users_1 = new_users; _i < new_users_1.length; _i++) {
-    var user = new_users_1[_i];
-    for (var _a = 0, current_users_1 = current_users; _a < current_users_1.length; _a++) {
-        var current = current_users_1[_a];
-        if (user.toLowerCase == current.toLowerCase) {
-            console.log("you need to enter a new username");
+const current_users = ["Saher", "Ayesha", "Saad", "ABdulRehman", "anus"];
+const new_users = ["Saher", "Ayesha", "faiza", "ABdulRehman", "anus", "JAVeria"];
+function checkUserName(current_users, new_users) {
+    const lowerCasedCurrentUsers = current_users.map(user => user.toLowerCase());
+    for (const newUser of new_users) {
+        const lowerCasedNewUsers = newUser.toLowerCase();
+        if (lowerCasedCurrentUsers.includes(lowerCasedNewUsers)) {
+            console.log(`Username${newUser} already taken enter a new username`);
         }
         else {
-            console.log("the name is available");
+            console.log(`username${newUser}is avilable`);
         }
     }
 }
+checkUserName(current_users, new_users);

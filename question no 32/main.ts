@@ -8,3 +8,23 @@
 • Make sure your comparison is case insensitive. If 'John' has been used, 'JOHN' should not be accepted.*/
 
 // Step no 1
+const current_users:string[]= ["Saher" ,"Ayesha","Saad","ABdulRehman","anus"]
+const new_users:string[]=["Saher" ,"Ayesha","faiza","ABdulRehman","anus","JAVeria"]
+
+function checkUserName (current_users:string[],new_users:string[]):void{
+   const lowerCasedCurrentUsers = current_users.map(user => user.toLowerCase())
+
+   for(const newUser of new_users){
+    const  lowerCasedNewUsers=newUser.toLowerCase();
+    if (lowerCasedCurrentUsers.includes(lowerCasedNewUsers)){
+        console.log(`Username${newUser} already taken enter a new username`)
+    }
+    else{
+        console.log(`username${newUser}is avilable`)
+    }
+
+    
+   }
+}
+
+checkUserName(current_users,new_users)
